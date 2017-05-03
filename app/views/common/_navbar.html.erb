@@ -4,7 +4,6 @@
       <div class="navbar-header">
          <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>'  style="height: 32px;width: 32px;float:left;margin:0px 5px;"> Fitness Listing</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -22,24 +21,31 @@
             <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
             <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
           <% else %>
-                   <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                         Hi!, <%= current_user.email %>
-                         <b class="caret"></b>
-                     </a>
-                     <ul class="dropdown-menu">
-                    <% if current_user.admin? %>
-                     <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
-                     <% end %>
-                     <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-                     </ul>
-                   </li>
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   Hi!, <%= current_user.email %>
+                   <b class="caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+               <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
                <% end %>
+               <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+               </ul>
+             </li>
+         <% end %>
 
                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                  <div class="modal-dialog" role="document">
                    <div class="loginmodal-container">
+
                       <h2>Log in</h2>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">Log in</div>
+                        <div class="panel-body">
+                          Panel content
+                        </div>
+                      </div>
                       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="form-inputs">
                           <%= f.input :email, required: false, autofocus: true %>
