@@ -74,6 +74,18 @@ body {
     color: #212121;
 }
 
+.form-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 200%; //加上width
+}
+
 
 
 //---------Box---------
