@@ -28,7 +28,7 @@
                </a>
                <ul class="dropdown-menu">
               <% if current_user.admin? %>
-               <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
+               <li> <%= link_to("管理界面", admin_jobs_path) %> </li>
                <% end %>
                <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                </ul>
@@ -39,21 +39,15 @@
                  <div class="modal-dialog" role="document">
                    <div class="loginmodal-container">
 
-                      <h2>Log in</h2>
-                      <div class="panel panel-default">
-                        <div class="panel-heading">Log in</div>
-                        <div class="panel-body">
-                          Panel content
-                        </div>
-                      </div>
+                      <h2>登录</h2>
                       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="form-inputs">
-                          <%= f.input :email, required: false, autofocus: true %>
-                          <%= f.input :password, required: false %>
-                          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                          <%= f.input :email,:label => "邮箱", required: false, autofocus: true %>
+                          <%= f.input :password, :label => "密码",required: false %>
+                          <%= f.input :remember_me, :label => "记住我",as: :boolean if devise_mapping.rememberable? %>
                         </div>
                         <div class="form-actions">
-                          <%= f.button :submit, "Log in" %>
+                          <%= f.button :submit, "提交" %>
                         </div>
                       <% end %>
                    </div>
@@ -63,16 +57,16 @@
                <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                  <div class="modal-dialog">
                    <div class="loginmodal-container">
-                     <h2>Sign up</h2>
+                     <h2>注册</h2>
                        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                        <%= f.error_notification %>
                        <div class="form-inputs">
-                         <%= f.input :email, required: true, autofocus: true %>
-                         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-                         <%= f.input :password_confirmation, required: true %>
+                         <%= f.input :email, :label => "邮箱",required: true, autofocus: true %>
+                         <%= f.input :password, :label => "密码",required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                         <%= f.input :password_confirmation, :label => "再次确认密码",required: true %>
                        </div>
                        <div class="form-actions">
-                           <%= f.button :submit, "Sign up" %>
+                           <%= f.button :submit, "提交" %>
                        </div>
                      <% end %>
                    </div>
