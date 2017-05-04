@@ -27,7 +27,7 @@ html {
 body {
   min-height: 100%;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
 }
 
 //---------Navbar---------
@@ -159,6 +159,7 @@ body {
 
  /****** LOGIN MODAL ******/
  .loginmodal-container {
+   margin-bottom: 50px;
    padding: 30px;
    max-width: 350px;
    width: 100% !important;
@@ -170,10 +171,20 @@ body {
    font-family: roboto;
  }
 
+ .facepanel {
+      background-image: image_url("header1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 0px;
+      margin-top: -20px
+  }
+
+
  .loginmodal-container h1 {
    text-align: center;
    font-size: 1.8em;
    font-family: roboto;
+
  }
 
  .loginmodal-container input[type=submit] {
@@ -184,7 +195,7 @@ body {
  }
 
  .loginmodal-container input[type=text], input[type=password] {
-   height: 44px;
+   height: 34px;
    font-size: 16px;
    width: 100%;
    margin-bottom: 10px;
@@ -262,10 +273,9 @@ body {
  }
 
  footer .footer-below {
-  position: flex;
   height: 90px;
   left: 0;
-  margin-top: 100px;
+  margin-top: 0px;
   margin-bottom: 0px;
   padding:20px 0;
   bottom: 0;
